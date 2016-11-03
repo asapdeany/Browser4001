@@ -11,6 +11,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     Button go_button = null;
     WebView web_view = null;
+    WebView clock = null;
     TextView url_field = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,12 @@ public class MainActivity extends AppCompatActivity {
         go_button = (Button) findViewById(R.id.go_button);
         web_view = (WebView) findViewById(R.id.web_view);
         url_field = (TextView) findViewById(R.id.url_field);
+
+        
+        clock = (WebView) findViewById(R.id.clock);
+        clock.getSettings().setJavaScriptEnabled(true);
+        clock.loadUrl("file:///android_asset/clock.html");
+
 
         go_button.setOnClickListener(new View.OnClickListener() {
             @Override
